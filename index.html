@@ -24,6 +24,7 @@
 
             var ctaButton = document.getElementById('ctaButton');
             ctaButton.href = "https://branch.devishetty.net/qxCsl7xxFAb";
+            // optionally override CTA QL if user comes from other Branch Links 
             if (window.location.search.includes('_branch_match_id')) {
                 // update the href with dynamic link
                 ctaButton.href = "https://exampleRootDomain.com/";
