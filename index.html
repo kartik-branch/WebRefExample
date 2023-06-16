@@ -29,7 +29,7 @@
                 ctaButton.href = "https://exampleRootDomain.com/";
             }
             else if (window.location.search.includes('gclid') || window.location.search.includes('gbraid')) {
-                // trigger app either through Universal Links or URI schemes 
+                // trigger app either through Universal Links or URI schemes or create a dynamic branch link based on query params 
                 // SDK will retrieve gclid / gbraid from referring non-Branch links as well
                 ctaButton.href = "https://exampleRootDomain.com/";  
             }
