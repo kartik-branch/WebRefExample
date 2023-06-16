@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Materialistic CTA Button</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Website</h1>
+        <p>This is a simple index.html page.</p>
+
+        <a class="waves-effect waves-light btn-large" onclick="showURL()">Call to Action</a>
+        <br><br>
+        <label id="urlLabel"></label>
+    </div>
+
+    <script>
+        function showURL() {
+            var urlLabel = document.getElementById('urlLabel');
+            urlLabel.textContent = "Current Page URL: " + window.location.href;
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
