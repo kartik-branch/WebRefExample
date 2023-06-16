@@ -12,15 +12,27 @@
     <div class="container">
         <h1>Sample App</h1>
         <br><br>
-        <a class="waves-effect waves-light btn-large" href="https://branch.devishetty.net/qxCsl7xxFAb">Final CTA</a>
+        <a class="waves-effect waves-light btn-large" id="ctaButton">Final CTA</a>
         <br><br>
-        <label id="urlLabel"></label>
+        <label id="urlValue"></label>
     </div>
 
-    <script>
+   <script>
         window.addEventListener('load', function() {
-            var urlLabel = document.getElementById('urlLabel');
+            var urlLabel = document.getElementById('urlValue');
             urlLabel.textContent = "Page URL is : " + window.location.href;
+
+            var ctaButton = document.getElementById('ctaButton');
+            ctaButton.href = "https://branch.devishetty.net/qxCsl7xxFAb";
+            if (window.location.search.includes('_branch_match_id')) {
+                // update the href with dynamic link
+                ctaButton.href = "https://exampleRootDomain.com/";
+            }
+            else if (window.location.search.includes('gclid') || window.location.search.includes('gbraid')) {
+                // trigger app either through Universal Links or URI schemes 
+                // SDK will retrieve gclid / gbraid from referring non-Branch links as well
+                ctaButton.href = "https://exampleRootDomain.com/";  
+            }
         });
     </script>
 
