@@ -18,10 +18,10 @@
     </div>
 
     <script>
-        function showURL() {
+        window.addEventListener('load', function() {
             var urlLabel = document.getElementById('urlLabel');
-            urlLabel.textContent = "Current Page URL: " + window.location.href;
-        }
+            urlLabel.textContent = "Page URL is : " + window.location.href;
+        });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
