@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Test Kartik</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sample App</h1>
+        <br><br>
+        <a class="waves-effect waves-light btn-large" id="mimicA">Mimic GCLID and GBRAID</a>
+        <a class="waves-effect waves-light btn-large" id="mimicB">Mimic non-san paid media campaigns</a>
+        <a class="waves-effect waves-light btn-large" id="mimicC">Mimic Facebook</a>
+        <br><br>
+        <br><br>
+        <a class="waves-effect waves-light btn-large" id="mimicA">Product Page A</a>
+        <a class="waves-effect waves-light btn-large" id="mimicB">Product Page B</a>
+        <br><br>
+        <a class="waves-effect waves-light btn-large" id="ctaButton">Final CTA</a>
+        <br><br>
+        <label id="urlValue"></label>
+    </div>
+
+   <script>
+        window.addEventListener('load', function() {
+            var urlLabel = document.getElementById('urlValue');
+            urlLabel.textContent = "Page URL is : " + window.location.href;
+
+            var ctaButton = document.getElementById('ctaButton');
+            ctaButton.href = "https://branch.devishetty.net/qxCsl7xxFAb";
+            // optionally override CTA QL if user comes from other Branch Links 
+            if (window.location.search.includes('_branch_match_id')) {
+                // update the href with dynamic link
+                ctaButton.href = "https://exampleRootDomain.com/";
+            }
+            else if (window.location.search.includes('gclid') || window.location.search.includes('gbraid')) {
+                // trigger app either through Universal Links or URI schemes or create a dynamic branch link based on query params 
+                // SDK will retrieve gclid / gbraid from referring non-Branch links as well
+                ctaButton.href = "https://exampleRootDomain.com/";  
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
